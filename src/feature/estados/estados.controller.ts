@@ -5,30 +5,25 @@ import { UpdateEstadoDto } from './dto/update-estado.dto';
 
 @Controller('estados')
 export class EstadosController {
-  constructor(private readonly estadosService: EstadosService) {}
-
-  @Post()
-  create(@Body() createEstadoDto: CreateEstadoDto) {
-    return this.estadosService.create(createEstadoDto);
-  }
+  constructor(private readonly s: EstadosService) {}
 
   @Get()
-  getAll() {
-    return this.estadosService.findAll();
+  findAll() {
+    return this.s.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.estadosService.findOne(+id);
+    return this.s.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateEstadoDto: UpdateEstadoDto) {
-    return this.estadosService.update(+id, updateEstadoDto);
+    return this.s.update(+id, updateEstadoDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.estadosService.remove(+id);
+  delete(@Param('id') id: string) {
+    return this.s.remove(+id);
   }
 }
