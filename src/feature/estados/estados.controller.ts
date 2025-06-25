@@ -13,7 +13,7 @@ export class EstadosController {
   }
 
   @Get()
-  findAll() {
+  getAll() {
     return this.estadosService.findAll();
   }
 
