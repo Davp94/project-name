@@ -8,8 +8,8 @@ export class UsuariosService {
     return 'This action adds a new usuario';
   }
 
-  findAll() {
-    return `This action returns all usuarios`;
+  findAll(name: string, email: string) {
+    return `This action returns all usuarios filtered`;
   }
 
   findOne(id: number) {
